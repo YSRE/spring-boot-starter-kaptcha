@@ -1,0 +1,4 @@
+kaptcha:
+  enable: true
+  web:
+    enable: true
