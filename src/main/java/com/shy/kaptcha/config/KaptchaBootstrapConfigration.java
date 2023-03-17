@@ -4,13 +4,14 @@ import com.google.code.kaptcha.Producer;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;
 import com.shy.kaptcha.config.properties.KaptchaProperties;
+import com.shy.kaptcha.controller.DefaultKaptchaController;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.DependsOn;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Import;
 
 import java.util.Properties;
 
@@ -19,6 +20,7 @@ import java.util.Properties;
  * @date 2023/3/15
  */
 @AutoConfiguration
+@Import({KaptchaProperties.class,DefaultKaptchaController.class})
 @EnableConfigurationProperties(KaptchaProperties.class)
 public class KaptchaBootstrapConfigration {
 

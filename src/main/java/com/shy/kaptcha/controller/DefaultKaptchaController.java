@@ -5,6 +5,7 @@ import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import java.io.IOException;
  * @author shy
  * @date 2023/3/16
  */
+@DependsOn("kaptchaProperties")
 @ConditionalOnProperty(name = {"kaptcha.enable","kaptcha.web.enable"},havingValue = "true")
 @Controller
 @RequestMapping("/kaptcha")
